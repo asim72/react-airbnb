@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const NavBar = () => {
   return (
     <div className="ui fixed inverted menu teal">
       <a href="#" className=" item">
@@ -28,4 +28,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;

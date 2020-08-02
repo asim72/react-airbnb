@@ -1,0 +1,2 @@
+export const SELECTED_HOTEL = "SELECTED_HOTEL";
+export const FETCH_HOTELS = "FETCH_HOTELS";

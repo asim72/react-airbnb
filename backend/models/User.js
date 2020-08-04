@@ -10,20 +10,13 @@ const userSchema = new schema({
   },
   email: {
     type: String,
-    min: [4, "Too short , min 4 characters are required"],
-    max: [32, "Too short , min 4 characters are required"],
-    unique: true,
-    lowercase: true,
-    required: "email is required",
-    match: [
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    ],
+    required: "true",
   },
   password: {
     type: String,
     min: [4, "Too short , min 4 characters are required"],
     max: [32, "Too short , min 4 characters are required"],
-    required: "password is required",
+    required: true,
   },
   hotels: [
     {
@@ -34,3 +27,5 @@ const userSchema = new schema({
 });
 
 const User = mongoose.model("User", userSchema);
+
+module.exports = User;

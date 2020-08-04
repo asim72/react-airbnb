@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Hotel = require("../models/Hotel");
+const Auth = require("../middleware/Auth");
 
-router.get("/all", async (req, res) => {
+router.get("/all", Auth, async (req, res) => {
   try {
     const hotels = await Hotel.find({});
 

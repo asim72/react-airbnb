@@ -38,7 +38,11 @@ const hotelSchema = new schema({
     type: Number,
   },
   shared: {
-    type: Number,
+    type: Boolean,
+  },
+  user: {
+    type: schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

@@ -14,11 +14,18 @@ const actions = {
 class HotelList extends Component {
   renderHotels = () => {
     return this.props.hotels.map((hotel, index) => {
-      return <Hotel key={index} hotel={hotel} />;
+      return this.props.hotels ? (
+        <Hotel key={index} hotel={hotel} />
+      ) : (
+         <div>
+          <div className="ui active centered inline loader"></div>
+          <h2 style={{ paddingLeft: 450 }}>Loading Documents...</h2>
+        </div>
+      );
     });
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.fetch_hotels();
   }
 

@@ -14,3 +14,47 @@
 .header {
   font-size: 17px;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  color: teal;
+  margin-bottom: -5px;
+}
+
+.category {
+  opacity: 0.6;
+  font-size: 17px;
+}
+
+.category.condo {
+  color: green;
+}
+
+.category.bunglow {
+  color: blue;
+}
+
+.category.appartment {
+  color: red;
+}
+
+.city {
+  font-size: 17px;
+}
+
+.description {
+  font-size: 15px;
+}
+
+.bedrooms {
+  font-size: 16px;
+}
+
+hr {
+  opacity: 0.4;
+}

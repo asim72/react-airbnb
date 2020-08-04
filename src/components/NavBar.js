@@ -1,17 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="ui fixed inverted menu teal">
-      <a href="#" className=" item">
+      <Link to="/" className="item">
         BookWithMe
-      </a>
-      <a href="#" className="item">
+      </Link>
+
+      <Link to="/" className="item">
         Messages
-      </a>
-      <a href="#" className="item">
-        Friends
-      </a>
+      </Link>
       <div className="right menu">
         <div className="item">
           <div className="ui icon input">
@@ -19,10 +18,11 @@ const NavBar = () => {
             <i className="search link icon"></i>
           </div>
         </div>
-        <a href="#" className="ui item">
+
+        <Link className="item" to="/">
           Logout &nbsp;
           <i className="power off icon"></i>
-        </a>
+        </Link>
       </div>
     </div>
   );

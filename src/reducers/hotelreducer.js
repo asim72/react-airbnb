@@ -8,16 +8,17 @@ let initialState = {
 export const hotelReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case FETCH_HOTELS:
+    
       return {
         ...state,
         data: actions.hotels,
       };
+      
+      
     case SELECTED_HOTEL:
       return {
         ...state,
-        selectedHotel: actions.hotels.find(
-          (hotel) => hotel.id == actions.hotelId
-        ),
+        selectedHotel: actions.hotels
       };
     default:
       return state;

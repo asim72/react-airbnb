@@ -1,75 +1,33 @@
 import { FETCH_HOTELS, SELECTED_HOTEL } from "../constants/airbnbConstants";
 
-const hotels = [
-  {
-    id: 1,
-    city: "navsari",
-    title: "orchid palace",
-    street: "tower road",
-    image: "assets/1.jpg",
-    category: "house",
-    bedroom: 9,
-    guest: 4,
-    dailyRate: 33,
-    shared: true,
-    created: "24/7/2020",
-    description: "golden lake view appt",
-  },
-  {
-    id: 2,
-    city: "navsari",
-    title: "orchid palace",
-    street: "tower road",
-    image: "assets/1.jpg",
-    category: "house",
-    bedroom: 9,
-    guest: 4,
-    dailyRate: 33,
-    shared: true,
-    created: "24/7/2020",
-    description: "golden lake view appt",
-  },
-  {
-    id: 3,
-    city: "navsari",
-    street: "tower road",
-    title: "orchid palace",
-    image: "assets/1.jpg",
-    category: "house",
-    bedroom: 9,
-    guest: 4,
-    dailyRate: 33,
-    shared: true,
-    created: "24/7/2020",
-    description: "golden lake view appt",
-  },
-  {
-    id: 4,
-    city: "navsari",
-    street: "tower road",
-    title: "orchid palace",
-    image: "assets/1.jpg",
-    category: "house",
-    bedroom: 9,
-    guest: 4,
-    dailyRate: 33,
-    shared: true,
-    created: "24/7/2020",
-    description: "golden lake view appt",
-  },
-];
+import axios from "axios";
 
-export const fetch_hotels = () => {
-  return {
-    type: FETCH_HOTELS,
-    hotels,
-  };
+export const fetch_hotels = () => async (dispatch) => {
+  try {
+    const res = await axios.get("http://localhost:1200/api/airbnb/all");
+
+    setTimeout(() => {
+      dispatch({
+        type: FETCH_HOTELS,
+        hotels: res.data.hotels,
+      });
+    }, 1000);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-export const selected_hotel = (hotelId) => {
-  return {
-    type: SELECTED_HOTEL,
-    hotels,
-    hotelId,
-  };
+export const selected_hotel = (hotelId) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `http://localhost:1200/api/airbnb/hotel/${hotelId}`
+    );
+
+    dispatch({
+      type: SELECTED_HOTEL,
+      hotels: res.data,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };

@@ -25,7 +25,7 @@ router.get("/hotel/:id", async (req, res) => {
       return res.status(401).json({ message: "No Hotel Found" });
     }
 
-    res.status(200).json({ hotel });
+    res.status(200).send(hotel);
   } catch (error) {
     console.error(error);
     res.status(500).send("server error");

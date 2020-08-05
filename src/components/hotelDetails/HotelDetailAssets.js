@@ -9,21 +9,21 @@ const HotelDetailAssets = () => {
           <div className="ui segment">
             <div className="ui grid">
               <div className="eight wide column">
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Cooling
                 </p>
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Heating
                 </p>
               </div>
               <div className="eight wide column">
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Cooling
                 </p>
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Heating
                 </p>
@@ -35,21 +35,21 @@ const HotelDetailAssets = () => {
           <div className="ui segment">
             <div className="ui grid">
               <div className="eight wide column">
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Cooling
                 </p>
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Heating
                 </p>
               </div>
               <div className="eight wide column">
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Cooling
                 </p>
-                <p>
+                <p className="asset">
                   <i className="plug icon"></i>
                   Heating
                 </p>

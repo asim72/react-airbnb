@@ -1,10 +1,13 @@
 import { FETCH_HOTELS, SELECTED_HOTEL } from "../constants/airbnbConstants";
 
 import axios from "axios";
+import AxiosService from "../services/AxiosService";
+
+const axiosInstance = AxiosService.getInterceptor();
 
 export const fetch_hotels = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:1200/api/airbnb/all");
+    const res = await axiosInstance.get("http://localhost:1200/api/airbnb/all");
 
     setTimeout(() => {
       dispatch({
@@ -19,7 +22,7 @@ export const fetch_hotels = () => async (dispatch) => {
 
 export const selected_hotel = (hotelId) => async (dispatch) => {
   try {
-    const res = await axios.get(
+    const res = await axiosInstance.get(
       `http://localhost:1200/api/airbnb/hotel/${hotelId}`
     );
 

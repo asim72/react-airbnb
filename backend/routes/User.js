@@ -11,17 +11,13 @@ router.post("/register", async (req, res) => {
   try {
     if (!email || !password) {
       return res.status(402).send({
-        errors: [
-          { title: "Data missing", detail: "Provide Email And Password" },
-        ],
+        errors: [{ detail: "Provide Email And Password" }],
       });
     }
 
     if (password !== passwordConfirmation) {
       return res.status(402).send({
-        errors: [
-          { title: "Invalid Credentials", detail: "Password Doesnt Match" },
-        ],
+        errors: [{ detail: "Password Doesnt Match" }],
       });
     }
 
@@ -29,9 +25,7 @@ router.post("/register", async (req, res) => {
 
     if (user) {
       return res.status(402).send({
-        errors: [
-          { title: "Invalid Credentials", detail: "User already exist" },
-        ],
+        errors: [{ detail: "User already exist" }],
       });
     }
 
@@ -64,7 +58,6 @@ router.post("/login", async (req, res) => {
       return res.status(402).send({
         errors: [
           {
-            title: "Invalid Credentials",
             detail: "Provide Email And Password",
           },
         ],
@@ -75,9 +68,7 @@ router.post("/login", async (req, res) => {
 
     if (!user) {
       return res.status(402).send({
-        errors: [
-          { title: "Invalid Credentials", detail: "User Does Not Exist" },
-        ],
+        errors: [{ detail: "User Does Not Exist" }],
       });
     }
 
@@ -85,7 +76,7 @@ router.post("/login", async (req, res) => {
 
     if (!isMatch) {
       return res.status(402).send({
-        errors: [{ title: "Invalid Credentials", detail: "Password Invalid" }],
+        errors: [{ detail: "Password Invalid" }],
       });
     }
 

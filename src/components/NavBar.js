@@ -1,9 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
-  return (
-    <div className="ui fixed inverted menu teal">
+
+import {logout} from '../actions/authActions'
+import store from '../store/Store'
+
+
+ class NavBar extends Component {
+  render() {
+    return (
+      <div className="ui fixed inverted menu teal">
       <Link to="/" className="item">
         BookWithMe
       </Link>
@@ -19,13 +25,16 @@ const NavBar = () => {
           </div>
         </div>
 
-        <Link className="item" to="/">
+          <Link className="item" to="/" onClick={() => {
+            store.dispatch(logout())
+        }}>
           Logout &nbsp;
           <i className="power off icon"></i>
         </Link>
       </div>
     </div>
-  );
-};
+    )
+  }
+}
 
-export default NavBar;
+export default NavBar

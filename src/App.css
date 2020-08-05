@@ -26,6 +26,14 @@
   margin-bottom: -5px;
 }
 
+.register,
+.login {
+  font-size: 40px;
+  font-weight: bold;
+  color: teal;
+  margin-bottom: 50px;
+}
+
 .category {
   opacity: 0.6;
   font-size: 17px;
@@ -57,4 +65,49 @@
 
 hr {
   opacity: 0.4;
+}
+
+.text {
+  position: absolute;
+
+  margin: 0 auto;
+  left: 0;
+
+  top: 10%; /* Adjust this value to move the positioned div up and down */
+  right: 0%;
+  width: 60%;
+  color: white;
+  /* Set the width of the positioned div */
+}
+
+.ui.segment {
+  color: transparent;
+}
+
+.text h1 {
+  font-size: 60px;
+}
+
+.text p {
+  font-size: 20px;
+}
+
+.login_image {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -40px;
+}
+
+.register_Image {
+  width: 150vh;
+  height: 100vh;
+  margin-bottom: -40px;
+}
+
+.hello {
+  margin-right: 40px;
+}
+
+.asset {
+  color: teal;
 }

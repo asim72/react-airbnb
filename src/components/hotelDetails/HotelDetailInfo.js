@@ -10,8 +10,10 @@ const HotelDetailInfo = ({ selectedHotel }) => {
           {selectedHotel.shared ? "shared" : "entire"} {selectedHotel.category}
         </span>
         <p className="title">{selectedHotel.title}</p>
-        <p className="city">{titleize(selectedHotel.city)}</p>
-        <p className="bedrooms">
+        <p className="city" style={{ color: "grey" }}>
+          {titleize(selectedHotel.city)}
+        </p>
+        <p className="bedrooms" style={{ color: "black" }}>
           <i className="plug icon"></i>
           {selectedHotel.bedroom} Bedrooms &nbsp;
           <i className="plug icon"></i> {selectedHotel.bedroom * 2} Guests

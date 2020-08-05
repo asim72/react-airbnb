@@ -18,7 +18,7 @@ router.get("/all", Auth, async (req, res) => {
   }
 });
 
-router.get("/hotel/:id", async (req, res) => {
+router.get("/hotel/:id", Auth, async (req, res) => {
   try {
     const hotel = await Hotel.findOne({ _id: req.params.id });
 

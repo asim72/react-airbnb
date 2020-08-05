@@ -1,28 +1,41 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
 
 import HotelList from "./components/HotelList";
 
 import React, { Component } from "react";
 import HotelDetails from "./components/HotelDetails";
 import { Route, Redirect } from "react-router-dom";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import { checkAuthState } from "./actions/authActions";
+import store from "./store/Store";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 class App extends Component {
+  UNSAFE_componentWillMount() {
+    this.checkAuthState();
+  }
+
+  checkAuthState() {
+    store.dispatch(checkAuthState());
+  }
   render() {
     return (
       <div>
-        <NavBar />
-
-        <div className="ui container">
+        <div>
           <Route
             path="/"
             exact
             render={() => {
-              return <Redirect to="/hotel" />;
+              return <Redirect to="/login" />;
             }}
           />
-          <Route path="/hotel" component={HotelList} exact />
-          <Route path="/hotel/:id" component={HotelDetails} exact />
+
+          <ProtectedRoute path="/hotel" component={HotelList} exact />
+
+          <ProtectedRoute path="/hotel/:id" component={HotelDetails} exact />
+          <Route path="/login" component={Login} exact />
+          <Route path="/register" component={Register} exact />
         </div>
       </div>
     );
